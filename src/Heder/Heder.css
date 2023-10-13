@@ -1,0 +1,37 @@
+.heder{
+    background-color: #70BE5B;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding:10px;
+
+}
+.heder_logo{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo{
+    width: 30%;
+}
+.dexatun{
+    color: #009900;
+    margin-left: 10px;
+    font-size: 30px;
+}
+.heder_menu{
+    color:green;
+    font-size: 20px;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.heder_menu>b{
+    cursor: pointer;
+}
+.heder_menu>b:hover{
+    color: #0d470d;
+}
