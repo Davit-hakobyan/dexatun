@@ -16,6 +16,15 @@
 .logo{
     width: 30%;
 }
+.logoi_mej{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #009900;
+   
+    
+}
 .dexatun{
     color: #009900;
     margin-left: 10px;

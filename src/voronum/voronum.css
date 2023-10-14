@@ -1,0 +1,61 @@
+.teg_i{
+    font-size: 20px;
+
+}
+.voronum{
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.voronman_div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.voronman_input{
+    border: 1px solid green;
+    width: 40%;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 15px 0 0 15px;
+}
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #009900;
+    background-color: #009900;
+    height: 32px;
+    width: 50px;
+    border-radius: 0 15px 15px 0;
+}
+.search:hover{
+    cursor: pointer;
+    background-color: #0b530b;
+}
+.search>svg{
+    color: white;
+}
+.voronman_ardjunq{
+    width: 50%;
+    margin: 15px;
+    border: 2px solid #009900;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(41, 46, 51, 0.48) 6px 2px 16px 0px, rgba(49, 46, 46, 0.8) -6px -2px 16px 0px;
+}
+.voronman_ardjunq:hover{
+    border: 2px solid #0b530b;
+
+}
+.voronman_ej{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
