@@ -44,3 +44,13 @@
 .heder_menu>b:hover{
     color: #0d470d;
 }
+
+
+/* MEDIA */
+
+@media screen  and (max-width:800px){
+    .logo{
+        width: 40%;
+    }
+    
+}

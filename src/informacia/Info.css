@@ -1,0 +1,27 @@
+.info{
+    width: 100%;
+    background-image: url('../img/info1.webp');
+    background-blend-mode:multiply;
+    background-color: gray;
+    background-position: center;
+    padding: 100px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.info>h2{
+    width: 40%;
+    color:black;
+}
+
+/* Media */
+
+
+@media screen and (max-width:800px) {
+    .info>h2{
+        width: 80%;
+        color:black;
+    }
+    
+    
+}

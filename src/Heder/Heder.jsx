@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../img/logo.png'
 import './Heder.css'
-
+import { Router, Route, Routes } from 'react-router';
 
 
 const Heder = () => {
@@ -14,16 +14,9 @@ const Heder = () => {
                 <img className='logo' src={logo} alt="" />
                 <div className='logoi_mej' >
                     <b  hamar className='dexatun' >ԴԵՂԱՏՈԻՆ</b><br />
-                    <b className='' >(094)-12-34-56</b>
+                    <b className='' >+374(99)10-31-30</b>
                     
                 </div>
-            </div>
-            <div  className='heder_menu' >
-                <b>Կոնտակտային տվյալներ</b>
-                <b>Պատվիրել</b>
-                <b>Գործնըկերներ</b>
-                
-
             </div>
            
             
