@@ -3,7 +3,7 @@
 
 }
 .voronum{
-    padding: 50px;
+    padding: 50px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,6 +60,10 @@
 }
 .voronman_ej{
     position: relative;
+    max-height: 300px;
+    min-height:  0px;
+    overflow-y: scroll;
+    
   
     width: 100%;
     display: flex;
@@ -132,5 +136,48 @@
         font-size: 18px;
     
     }
-
+    .voronum{
+        padding: 50px 0px;
+    }
+    .voronman_ardjunq{
+       
+            width: 60%;
+            margin: 15px;
+            border: 2px solid #009900;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: rgba(41, 46, 51, 0.48) 6px 2px 16px 0px, rgba(49, 46, 46, 0.8) -6px -2px 16px 0px;
+        
+    }
+    .jnjel_div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        left: 84%;
+        top: 0;
+        cursor: pointer;
+        background-color: #009900;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        color: red;
+    }
+    .search{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #009900;
+        background-color: #009900;
+        height: 32px;
+        width: 40px;
+        border-radius: 0 15px 15px 0;
+    }
+    .voronman_input{
+        border: 1px solid green;
+        width: 60%;
+        height: 30px;
+        font-size: 20px;
+        border-radius: 15px 0 0 15px;
+    }
 }

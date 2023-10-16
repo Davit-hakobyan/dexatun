@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding:10px;
+    padding:10px 0px;
 
 }
 .heder_logo{
@@ -53,4 +53,25 @@
         width: 40%;
     }
     
+    
 }
+@media screen  and (max-width:400px){
+    .logo{
+        width:70%;
+    }
+    .heder{
+        background-color: #70BE5B;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0px;
+    
+    }
+    .dexatun{
+        color: #009900;
+        margin-left: 10px;
+        font-size: 27px;
+    }
+}
+

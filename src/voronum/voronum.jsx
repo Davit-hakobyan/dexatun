@@ -6,22 +6,42 @@ const Voronum = () => {
      const [ardjunq,setArdjunq] = useState([])
      const baza = [
         {id:1,
-          name:'analgin',
+          name:'аналгин',
         gin:2500,
-        arka:'առկա չէ',
+        arka:'առկա է',
         },
           {id:2,
-            name:'dimidrol',
+            name:'димидрол',
         gin:500,
         arka:'առկա է',
         },
           {id:3,
-            name:'aspirin',
+            name:'аспирин',
         gin:100,
         arka:'առկա է',
         },
           {id:4,
-            name:'pentalgin',
+            name:'пенталгин',
+        gin:3000,
+        arka:'առկա չէ',
+        },
+        {id:5,
+          name:'спирт 250мл',
+        gin:600,
+        arka:'առկա է',
+        },
+          {id:6,
+            name:'вата',
+        gin:200,
+        arka:'առկա է',
+        },
+          {id:7,
+            name:'спазмагон',
+        gin:900,
+        arka:'առկա է',
+        },
+          {id:8,
+            name:'натри хлор',
         gin:3000,
         arka:'առկա չէ',
         }
@@ -33,7 +53,7 @@ const Voronum = () => {
       let pat =[]
       setArdjunq([])
       baza.map((elem)=>{
-        if(elem.name.includes(value))
+        if(elem.name.includes(value.toLocaleLowerCase()))
         pat.push(elem)
       })
       if(pat.length===0){

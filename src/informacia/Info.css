@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: center;
 }
-.info>h2{
+.info>b{
     width: 40%;
     color:black;
 }
@@ -18,7 +18,7 @@
 
 
 @media screen and (max-width:800px) {
-    .info>h2{
+    .info>b{
         width: 80%;
         color:black;
     }

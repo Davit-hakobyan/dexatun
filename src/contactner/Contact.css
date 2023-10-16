@@ -94,19 +94,20 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
-        padding-top: 35px; 
+        padding: 0px;
     }
     .contact_1{
-        font-size: 15px;
+        font-size: 13px;
         width: 90%;
     }
     .contact_2{
-        width: 85%;
+        width: 80%;
         height: 300px;
         background-image: url('../img/dexatun.jpg');
         background-repeat: no-repeat;
         background-size: cover;
         border-radius: 15px;
         box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        margin: 20px 0px;
     }
 }
