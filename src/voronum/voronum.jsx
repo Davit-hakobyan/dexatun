@@ -96,7 +96,10 @@ const Voronum = () => {
        )
 
        }
+       
      
+       </div>
+       <div  className='div_scrol' >
        {ardjunq.map((elem)=>(
           (
             <div className='voronman_ardjunq' key={elem.id} >
