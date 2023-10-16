@@ -10,8 +10,9 @@
     justify-content: center;
 }
 .info>b{
-    width: 40%;
+    width: 50%;
     color:black;
+    font-size: 30px;
 }
 
 /* Media */
@@ -20,6 +21,7 @@
 @media screen and (max-width:800px) {
     .info>b{
         width: 80%;
+        font-size: 20px;
         color:black;
     }
     
