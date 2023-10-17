@@ -2,8 +2,15 @@ import React, { useEffect, useState } from 'react'
 import './voronum.css'
 
 const Voronum = () => {
+  
+
+ 
+
      const [value,setValue] = useState('')
      const [ardjunq,setArdjunq] = useState([])
+     const [zambjux,setZambjux] = useState([])
+     const [zambjuxdiv,setZambjuxdiv] = useState(false)
+     
      const baza = [
         {id:1,
           name:'аналгин',
@@ -46,41 +53,113 @@ const Voronum = () => {
         arka:'առկա չէ',
         }
      ]
-     function f(){
-      if(value==='' || value===[]){
-       return alert('խնդրում ենք մուտքագրել դեղի անվանումը')
+    function gnum(){
+      let k = 0
+      for(let m of zambjux ){
+       k+=m.gin
       }
-      let pat =[]
+      return k
+     }
+     useEffect(()=>{
+      if(value.length>0){
+        let pat =[]
       setArdjunq([])
       baza.map((elem)=>{
         if(elem.name.includes(value.toLocaleLowerCase()))
         pat.push(elem)
       })
-      if(pat.length===0){
-        alert('ցավոք մեր դեղատանը նմանատիպ դեղորայք կամ ապրանք չի վաճառվում')
-      }
+     
       setArdjunq(pat)
+     
+     
+      }
+    
+
+     },[value])
+     function f(){
+     
       setValue('')
     }
+    function avelacnelZ(e){
+    let k = e.target.value
+     let s = ardjunq.find(e=>e.id==k)
+     setZambjux(zambjux=>[...zambjux,s])
+    }
+    function jnjelZ(e){
+      let k = e.target.value
+      console.log(k)
+       let s = zambjux.filter(e=>e.id!=k)
+       setZambjux(s)
+    }
+   
+   useEffect(()=>{
+    setZambjux(zambjux)
+   
+     
+      
+   },[zambjux])
+  
+    
    
    
     
-     
-  return (
+return (
     <div>
         <div className='voronum' >
-            <div>
+        
+            <div className='vor_zam' >
                 <i className='teg_i' >Որոնումը իրականացնել ռուսերեն</i>
+                <div className='zambjux_div' onClick={()=>setZambjuxdiv(!zambjuxdiv)} >
+                    <svg   id='zambjux' xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                      <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                    </svg>
+                    <div  className='zambjuxi_qanak' >
+                      <small>{zambjux.length}</small>
+                    </div>
+                   
+                </div>
+               
+           
             </div>
+            <br />
+            
+            {zambjuxdiv && zambjux.length!=0 ?(
+              <div className='zambjuxmej_div' >
+                {zambjux.map((elem)=>(
+                  <div className='voronman_ardjunq' key={elem.id}  Mkey={elem.id}   >
+                  <div>
+                    <b>{elem.name}</b><br />
+                    <span>արժեքը-<b style={{color:"red"}} >{elem.gin}</b> դրամ</span>
+                    <br />
+                  </div>
+                  <button value={elem.id} onClick={jnjelZ}>x</button>
+                  </div>
+                ))}
+                <b>արժեքը -{gnum()} </b>
+            </div>
+            ):''
+
+            }
+           
+            
+
+           
+           
+            
+            
+            
             <br />
             <div className='voronman_div' >
                 <input type="text"  value={value} onChange={(event)=>setValue(event.target.value)} className='voronman_input'  onKeyDown={(event)=>{
                  if(event.keyCode===13){
                      return f()}}}     />
                 <div className='search' onClick={f} >
-                   <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" class="bi bi-x-lg" viewBox="0 0 16 16">
+                     <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                 </svg>
+                  
+                  
+                  
                 </div>
             </div>
             
@@ -102,11 +181,16 @@ const Voronum = () => {
        <div  className='div_scrol' >
        {ardjunq.map((elem)=>(
           (
-            <div className='voronman_ardjunq' key={elem.id} >
-              <b>{elem.name}</b><br />
+            <div className='voronman_ardjunq' key={elem.id}  Mkey={elem.id}   >
+             <div>
+             <b>{elem.name}</b><br />
               <span>արժեքը-<b style={{color:"red"}} >{elem.gin}</b> դրամ</span>
               <span> այս պահին <b>{elem.arka}</b> </span>
               <br />
+             </div>
+            
+              <button  value={elem.id} onClick={avelacnelZ} className='avelacnel_zanbjuxum' >+</button>
+             
               
 
 

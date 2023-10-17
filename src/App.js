@@ -6,6 +6,7 @@ import Voronum from './voronum/voronum';
 import Footer from './footer/Footer';
 import Contact from './contactner/Contact';
 import Info from './informacia/Info';
+import { useState } from 'react';
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
     <div className="App">
       <Heder/>
       <Info/>
-      <Voronum/>
+      <Voronum   />
       <Contact/>
       <Footer/>
     </div>

@@ -40,6 +40,35 @@
     color: #ac3815;
     padding: 8px;
 }
+.zambjux_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.zambjuxi_qanak{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #009900;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+}
+.vor_zam{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#zambjux{
+    cursor: pointer;
+    margin-left: 10px;
+    color: #ac3815;
+}
+#zambjux:hover{
+    width: 25px;
+    height: 25px;
+    transition: all 0.5s;
+}
 .search{
     display: flex;
     align-items: center;
@@ -49,6 +78,15 @@
     height: 32px;
     width: 50px;
     border-radius: 0 15px 15px 0;
+    
+}
+.zambjuxmej_div{
+    border: 1px solid red;
+    width: 50%;
+}
+#zambjuxicjnjel:hover{
+    color: red;
+
 }
 .search:hover{
     cursor: pointer;
@@ -58,6 +96,9 @@
     color: white;
 }
 .voronman_ardjunq{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 50%;
     margin: 25px 0px;
     border: 2px solid #009900;
@@ -71,10 +112,6 @@
 }
 .voronman_ej{
     position: relative;
-   
-    
-    
-  
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -99,9 +136,27 @@
     background-color: red;
     color: #009900;
 }
+.avelacnel_zanbjuxum{
+    cursor: pointer;
+    border: none;
+    width: 20px;
+    height: 20px;
+    background-color: #14e914;
+    border-radius: 50%;
+    color: #ac3815;
+    
+}
+.avelacnel_zanbjuxum:hover{
+    background-color: #0b530b;
+    
+}
 
 /* MEDIA */
 @media screen and (max-width:1000px) {
+    .zambjuxmej_div{
+        border: 1px solid red;
+        width: 70%;
+    }
     .voronman_input{
         border: 1px solid green;
         width: 60%;
@@ -135,6 +190,10 @@
     
 }
 @media screen and (max-width:500px) {
+    .zambjuxmej_div{
+        border: 1px solid red;
+        width: 90%;
+    }
     .voronman_input{
         border: 1px solid green;
         width: 80%;
