@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './voronum.css'
+import Dexeriinfo from '../dexeriinfo/Dexeriinfo'
 
 const Voronum = () => {
   
@@ -10,8 +11,14 @@ const Voronum = () => {
      const [ardjunq,setArdjunq] = useState([])
      const [zambjux,setZambjux] = useState([])
      const [zambjuxdiv,setZambjuxdiv] = useState(false)
+     const [dexqanak,setDexqanak] = useState(1)
      
      const baza = [
+      {id:0,
+        name:'aналгин',
+      gin:2500,
+      arka:true,
+      },
         {id:1,
           name:'аналгин',
         gin:2500,
@@ -101,6 +108,12 @@ const Voronum = () => {
      
       
    },[zambjux])
+   function QanakAvelacnel(){
+    setDexqanak(dexqanak+1)
+   }
+   function Qanakpakasacnel(){
+    setDexqanak(dexqanak+1)
+   }
   
     
    
@@ -129,13 +142,16 @@ return (
             {zambjuxdiv && zambjux.length!=0 ?(
               <div className='zambjuxmej_div' >
                 {zambjux.map((elem)=>(
-                  <div className='voronman_ardjunq' key={elem.id}  Mkey={elem.id}   >
+                  <div className='voronman_ardjunq1' key={elem.id}    >
                   <div>
                     <b>{elem.name}</b><br />
                     <span>արժեքը-<b style={{color:"red"}} >{elem.gin}</b> դրամ</span>
                     <br />
+
                   </div>
-                  <button value={elem.id} onClick={jnjelZ}>x</button>
+                  
+                  
+                  <button className='zabjuxichanelubut' value={elem.id} onClick={jnjelZ}>x</button>
                   </div>
                 ))}
                 <b>արժեքը -{gnum()} </b>
@@ -143,6 +159,7 @@ return (
             ):''
 
             }
+            
            
             
 
@@ -153,7 +170,12 @@ return (
             
             <br />
             <div className='voronman_div' >
-                <input type="text"  value={value} onChange={(event)=>setValue(event.target.value)} className='voronman_input'  onKeyDown={(event)=>{
+                <input type="text"  value={value} onChange={(event)=>{
+                  if('abcdefghijklmnopqrstuvwxyz'.includes(event.target.value.toLocaleLowerCase()) || 'աբգդեզէթժիլխծկհձղճմյնոչպջռսվտրյւքօֆ'.includes(event.target.value.toLocaleLowerCase())  ){
+                    return alert('Մութքագրեք ռուսերեն տառեր')
+                  }
+                  
+                  setValue(event.target.value)}} className='voronman_input'  onKeyDown={(event)=>{
                  if(event.keyCode===13){
                      return f()}}}     />
                 <div className='search' onClick={f} >

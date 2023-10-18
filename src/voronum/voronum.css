@@ -22,6 +22,7 @@
 
 }
 .voronman_div{
+    
     width: 100%;
     display: flex;
     align-items: center;
@@ -81,6 +82,10 @@
     
 }
 .zambjuxmej_div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     border: 1px solid red;
     width: 50%;
 }
@@ -105,6 +110,30 @@
     padding: 10px;
     border-radius: 5px;
     box-shadow: rgba(41, 46, 51, 0.48) 6px 2px 16px 0px, rgba(49, 46, 46, 0.8) -6px -2px 16px 0px;
+}
+.voronman_ardjunq1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 25px 0px;
+    border: 2px solid #009900;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: rgba(41, 46, 51, 0.48) 6px 2px 16px 0px, rgba(49, 46, 46, 0.8) -6px -2px 16px 0px;
+}
+.zabjuxichanelubut{
+    cursor: pointer;
+    color: white;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(206, 47, 47);
+    border-radius: 50%;
+    border: none;
+}
+.zabjuxichanelubut:hover{
+    background-color: red;
+
 }
 .voronman_ardjunq:hover{
     border: 2px solid #0b530b;
