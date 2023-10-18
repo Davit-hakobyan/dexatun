@@ -15,42 +15,42 @@ const Voronum = () => {
         {id:1,
           name:'аналгин',
         gin:2500,
-        arka:'առկա է',
+        arka:false,
         },
           {id:2,
             name:'димидрол',
         gin:500,
-        arka:'առկա է',
+        arka:false,
         },
           {id:3,
             name:'аспирин',
         gin:100,
-        arka:'առկա է',
+        arka:true,
         },
           {id:4,
             name:'пенталгин',
         gin:3000,
-        arka:'առկա չէ',
+        arka:true,
         },
         {id:5,
           name:'спирт 250мл',
         gin:600,
-        arka:'առկա է',
+        arka:false,
         },
           {id:6,
             name:'вата',
         gin:200,
-        arka:'առկա է',
+        arka:true,
         },
           {id:7,
             name:'спазмагон',
         gin:900,
-        arka:'առկա է',
+        arka:true,
         },
           {id:8,
             name:'натри хлор',
         gin:3000,
-        arka:'առկա չէ',
+        arka:false,
         }
      ]
     function gnum(){
@@ -65,7 +65,7 @@ const Voronum = () => {
         let pat =[]
       setArdjunq([])
       baza.map((elem)=>{
-        if(elem.name.includes(value.toLocaleLowerCase()))
+        if(elem.name.includes(value.toLocaleLowerCase().replaceAll(' ','')))
         pat.push(elem)
       })
      
@@ -83,7 +83,10 @@ const Voronum = () => {
     function avelacnelZ(e){
     let k = e.target.value
      let s = ardjunq.find(e=>e.id==k)
-     setZambjux(zambjux=>[...zambjux,s])
+     if(!zambjux.includes(s)){
+        setZambjux(zambjux=>[...zambjux,s])
+     }
+     
     }
     function jnjelZ(e){
       let k = e.target.value
@@ -185,11 +188,13 @@ return (
              <div>
              <b>{elem.name}</b><br />
               <span>արժեքը-<b style={{color:"red"}} >{elem.gin}</b> դրամ</span>
-              <span> այս պահին <b>{elem.arka}</b> </span>
+              <span> այս պահին <b>{elem.arka?('առկա է'):('առկա չէ')}</b> </span>
               <br />
              </div>
-            
+            {elem.arka?(
               <button  value={elem.id} onClick={avelacnelZ} className='avelacnel_zanbjuxum' >+</button>
+            ):('')
+              }
              
               
 
