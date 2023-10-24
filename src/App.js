@@ -7,9 +7,11 @@ import Footer from './footer/Footer';
 import Contact from './contactner/Contact';
 import Info from './informacia/Info';
 import { useState } from 'react';
+import Localstor from './Localstor';
 
 
 function App() {
+  
   return (
     <div className="App">
       <Heder/>
@@ -17,6 +19,7 @@ function App() {
       <Voronum   />
       <Contact/>
       <Footer/>
+      <Localstor/>
     </div>
     
     

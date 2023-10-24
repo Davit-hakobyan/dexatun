@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import './voronum.css'
-import Dexeriinfo from '../dexeriinfo/Dexeriinfo'
+import { json } from 'react-router'
+
+
 
 const Voronum = () => {
+  if(localStorage.getItem('zambjuxLocal')==null){
+    localStorage.setItem('zambjuxLocal',JSON.stringify([]))
+    
+}
   
 
  
 
      const [value,setValue] = useState('')
      const [ardjunq,setArdjunq] = useState([])
-     const [zambjux,setZambjux] = useState([])
+     const [localzambjux,setZambjux] = useState(JSON.parse(localStorage.getItem('zambjuxLocal')))
      const [zambjuxdiv,setZambjuxdiv] = useState(false)
      const [dexqanak,setDexqanak] = useState(1)
      
      const baza = [
-      {id:0,
-        name:'aналгин',
-      gin:2500,
-      arka:true,
-      },
+      
         {id:1,
           name:'аналгин',
         gin:2500,
@@ -62,61 +64,57 @@ const Voronum = () => {
      ]
     function gnum(){
       let k = 0
-      for(let m of zambjux ){
+      for(let m of localzambjux ){
        k+=m.gin
       }
       return k
      }
      useEffect(()=>{
-      if(value.length>0){
-        let pat =[]
-      setArdjunq([])
-      baza.map((elem)=>{
-        if(elem.name.includes(value.toLocaleLowerCase().replaceAll(' ','')))
-        pat.push(elem)
-      })
-     
-      setArdjunq(pat)
-     
-     
-      }
-    
-
-     },[value])
+        if(value.length>0){
+          let pat =[]
+          setArdjunq([])
+          baza.map((elem)=>{
+            if(elem.name.includes(value.toLocaleLowerCase().replaceAll(' ',''))){
+             pat.push(elem);
+            }
+          }) 
+          setArdjunq(pat)
+        }
+      },[value])
+      
      function f(){
-     
-      setValue('')
-    }
+        setValue('')
+      }
     function avelacnelZ(e){
     let k = e.target.value
      let s = ardjunq.find(e=>e.id==k)
-     if(!zambjux.includes(s)){
-        setZambjux(zambjux=>[...zambjux,s])
+     let zambjuxLocal = JSON.parse(localStorage.getItem('zambjuxLocal'))
+  
+     if(!zambjuxLocal.includes(s)){
+      localStorage.setItem('zambjuxLocal',JSON.stringify([...zambjuxLocal,s]))
+        setZambjux([...zambjuxLocal,s])
      }
      
     }
     function jnjelZ(e){
       let k = e.target.value
-      console.log(k)
-       let s = zambjux.filter(e=>e.id!=k)
+     
+       let s = localzambjux.filter(e=>e.id!=k)
+       localStorage.setItem('zambjuxLocal',JSON.stringify(s))
        setZambjux(s)
     }
    
    useEffect(()=>{
-    setZambjux(zambjux)
+    setZambjux(localzambjux)
    
      
       
-   },[zambjux])
-   function QanakAvelacnel(){
-    setDexqanak(dexqanak+1)
-   }
-   function Qanakpakasacnel(){
-    setDexqanak(dexqanak+1)
-   }
+   },[localzambjux])
+   console.log(JSON.parse(localStorage.getItem('zambjuxLocal')))
+  
   
     
-   
+
    
     
 return (
@@ -130,7 +128,7 @@ return (
                       <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
                     </svg>
                     <div  className='zambjuxi_qanak' >
-                      <small>{zambjux.length}</small>
+                      <small>{localzambjux.length}</small>
                     </div>
                    
                 </div>
@@ -139,9 +137,9 @@ return (
             </div>
             <br />
             
-            {zambjuxdiv && zambjux.length!=0 ?(
+            {zambjuxdiv && localzambjux.length!=0 ?(
               <div className='zambjuxmej_div' >
-                {zambjux.map((elem)=>(
+                {localzambjux.map((elem)=>(
                   <div className='voronman_ardjunq1' key={elem.id}    >
                   <div>
                     <b>{elem.name}</b><br />
@@ -159,6 +157,7 @@ return (
             ):''
 
             }
+           
             
            
             
