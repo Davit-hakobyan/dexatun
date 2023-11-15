@@ -31,7 +31,7 @@ const Voronum = () => {
   ];
   
  function gggg(){
-  console.log('ajo')
+ 
   let k = x+1
   setX(k)
    

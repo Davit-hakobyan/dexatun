@@ -25,7 +25,7 @@ const DexiPatQanak = (props) => {
   }
   return (
     <div>
-      <div>
+      <div  style={{border:'1px solid grey',padding:'3px'}} >
         <button
           style={{
             width: "20px",
