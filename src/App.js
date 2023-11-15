@@ -10,6 +10,7 @@ import { useState } from 'react';
 import Localstor from './Localstor';
 
 
+
 function App() {
   
   return (
@@ -17,9 +18,10 @@ function App() {
       <Heder/>
       <Info/>
       <Voronum   />
+      
       <Contact/>
       <Footer/>
-      <Localstor/>
+     
     </div>
     
     
